@@ -19,11 +19,11 @@ pointcount = 0
 linecount = 0
 layercount = 0
 
-pointmesh = open(path[0:string.rfind(path, "\\")] + 'xyzmesh.xyz', 'w')
+pointmesh = open(path[0:string.rfind(path, "\\")] + 'xyzmesh_output.xyz', 'w')
 
 for imageslice in os.listdir(path):
 
-#    if math.sqrt(heightcount) >= valuecount:
+    if math.sqrt(heightcount) >= valuecount:
 
         RGBslice = cv2.imread(path + imageslice)
         grayslice = cv2.cvtColor(RGBslice, cv2.COLOR_BGR2GRAY)
@@ -46,7 +46,7 @@ for imageslice in os.listdir(path):
         linecount = 0
         layercount += 1
 
-#        valuecount += 1
-#    heightcount += 1
+        valuecount += 1
+    heightcount += 1
 
 pointmesh.close()
