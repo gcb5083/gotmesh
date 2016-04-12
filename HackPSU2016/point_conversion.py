@@ -29,9 +29,12 @@ for imageslice in os.listdir(path):
         grayslice = cv2.cvtColor(RGBslice, cv2.COLOR_BGR2GRAY)
         edgeslice = cv2.Canny(grayslice, t1, t2, apertureSize=5)
 
-        baseslice = RGBslice.copy()
-        baseslice = np.uint8(baseslice/2.)
-        baseslice[edgeslice != 0] = (0, 255, 0)
+        #baseslice = RGBslice.copy()
+        #baseslice = np.uint8(baseslice/2.)
+        #baseslice[edgeslice != 0] = (0, 255, 0)
+
+        cv2.imshow('Edge Preview', edgeslice)
+        cv2.waitKey(200)
 
         for line in edgeslice:
             for point in line:
