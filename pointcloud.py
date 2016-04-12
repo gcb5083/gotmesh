@@ -14,9 +14,6 @@ path = sys.argv[1]
 if path[len(path) - 1] != '//':
     path = path + '//'
 
-heightcount = 1
-valuecount = 1
-
 pointcount = 0
 linecount = 0
 layercount = 0
@@ -36,13 +33,13 @@ cv2.createTrackbar('Save Settings', 'Edge Preview', 0, 1, nothing)
 start = 0
 save = 0
 
-pointmesh = open(path[0:string.rfind(path, "//")] + '_output.xyz', 'w')
+pointmesh = open('output.xyz', 'w')
 
-for imageslice in os.listdir(path):
+for imageslice in sorted(os.listdir(path)):
 
     extension = imageslice[(len(imageslice) - 3):(len(imageslice))]
 
-    if ((extension == "bmp" or
+    if (extension == "bmp" or
         extension == "dip" or
         extension == "peg" or
         extension == "jpg" or
@@ -56,8 +53,7 @@ for imageslice in os.listdir(path):
         extension == ".sr" or
         extension == "ras" or
         extension == "iff" or
-        extension == "tif") and
-        math.sqrt(heightcount) >= valuecount):
+        extension == "tif"):
 
         RGBslice = cv2.imread(path + imageslice)
         grayslice = cv2.cvtColor(RGBslice, cv2.COLOR_BGR2GRAY)
@@ -75,6 +71,8 @@ for imageslice in os.listdir(path):
                 cv2.imshow('Edge Preview', edgeslice)
                 cv2.waitKey(200)
 
+	print(imageslice)
+
         for line in edgeslice:
             for point in line:
 
@@ -88,9 +86,7 @@ for imageslice in os.listdir(path):
         linecount = 0
         layercount += 1
 
-        valuecount += 1
-    heightcount += 1
-    cv2.setTrackbarPos('Start', 'Edge Preview', 0)
-    start = 0
+        cv2.setTrackbarPos('Start', 'Edge Preview', 0)
+        start = 0
 
 pointmesh.close()
