@@ -15,6 +15,7 @@ Example:
 
 ```sh
 $ python point_conversion.py '/input/'
+```
 
 # running the original point conversion
 
