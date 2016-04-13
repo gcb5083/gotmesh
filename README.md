@@ -5,7 +5,7 @@ got mesh? is the most cheap and simplistic open source 3D scanner, with no movin
 # how it works
 The system at its core uses draining of a large tub of opaque liquid to create contours between the liquid and the object to be scanned. The contours are captured by your favorite timelapse device (DSLR, smartphone, etc.) and then imported into a folder on your computer. A python script that employs [OpenCV] converts the collection of images to a 3D point cloud mesh of .xyz format. If desired the output file can be converted into an .stl file for 3D printing by a program like [MeshLab].
 
-This project was originally entered in [HackPSU] 2016 and recieved second place overall.
+This project was originally entered in [HackPSU] 2016 and received second place overall.
 
 # running the newest point conversion
 
@@ -37,5 +37,11 @@ $ python point_conversion.py '/rock/' '2000' '2500'
    [OpenCV]: <http://opencv.org/>
    [HackPSU]: <http://hackpsu.org/>
    [MeshLab]: <http://meshlab.sourceforge.net/>
+
+# license
+
+CC BY-SA-NC
+
+creative commons - attribution - share-alike - non-commercial
 
 
