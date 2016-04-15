@@ -9,7 +9,7 @@ This project was originally entered in [HackPSU] 2016 and received second place 
 
 # running the newest point conversion
 
-To run the latest version of the point conversion from command line you need OpenCV installed. The arguement required is the location of the folder containing the images. This will open a preview viewer where you can adjust the edge detection thresholds. To save the current thresholds for all future images, click the save bar. To start processing, click the start bar. This will generate an xyz output file that then can be converted into an .stl file using another program, (we used MeshLab). A sample xyz file, MeshLab postprocessed xyz file and converted STL are included of the rock we used at HackPSU 2016.
+To run the latest version of the point conversion from command line you need OpenCV installed. The arguement required is the location of the folder containing the images. This will open a preview viewer where you can adjust the edge detection thresholds of all the images at once. To start processing, press any button. This will generate an xyz output file that then can be converted into an .stl file using another program, (we used MeshLab). A sample xyz file, MeshLab postprocessed xyz file and converted STL are included of the rock we used at HackPSU 2016.
 
 Example:
 
@@ -34,14 +34,19 @@ $ python point_conversion.py '/rock/' '2000' '2500'
  - improve lighting system
 
 
-   [OpenCV]: <http://opencv.org/>
-   [HackPSU]: <http://hackpsu.org/>
-   [MeshLab]: <http://meshlab.sourceforge.net/>
+# a special thanks to 
+ - [Neon22]
+
 
 # license
 
 CC BY-SA-NC
 
 creative commons - attribution - share-alike - non-commercial
+
+[OpenCV]: <http://opencv.org/>
+[HackPSU]: <http://hackpsu.org/>
+[MeshLab]: <http://meshlab.sourceforge.net/>
+[Neon22]: <https://github.com/Neon22>
 
 
