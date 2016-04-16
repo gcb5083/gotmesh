@@ -66,13 +66,13 @@ def detect_edges(grayscale, t1, t2):
     """ do edge detection here so doing smarter edge detection in future is in one place
         - canny two thresholds
     """
-    return cv2.Canny(grayscale, t1, t2, apertureSize=5)
+    return cv2.Canny(grayscale, t1, t2)
 
 
 
 ###
 if __name__ == "__main__":
-    # if no directory dropped then look for dir at head of this file
+    # if no dir supplied then use global var source_image_dir
     if len(sys.argv) > 1:
         dirpath = os.path.abspath(sys.argv[1])
     else:
